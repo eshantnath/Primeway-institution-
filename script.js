@@ -79,3 +79,48 @@ document.body.classList.add("page-loaded");
 
 });
 
+
+/* =================================
+   SMOOTH BACKGROUND SLIDESHOW
+================================= */
+
+const slides = document.querySelectorAll(".bg-slide");
+
+let currentSlide = 0;
+
+
+function changeBackground() {
+
+    /* Current photo hide */
+
+    slides[currentSlide].classList.remove("active");
+
+
+    /* Next photo */
+
+    currentSlide++;
+
+    
+    /* Last photo ke baad first photo */
+
+    if (currentSlide >= slides.length) {
+
+        currentSlide = 0;
+
+    }
+
+
+    /* Next photo show */
+
+    slides[currentSlide].classList.add("active");
+
+}
+
+
+/* Change photo after 6 seconds */
+
+setInterval(changeBackground, 6000);
+
+
+
+
