@@ -1,0 +1,962 @@
+/* =================================================
+BASIC SETTINGS
+================================================= */
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+scroll-behavior:smooth;
+}
+
+html{
+scroll-padding-top:100px;
+}
+
+body{
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Arial,
+sans-serif;
+
+background:#eef2f5;
+
+color:#1d2733;
+
+line-height:1.6;
+
+overflow-x:hidden;
+
+}
+
+/* =================================================
+iOS FROSTED BACKGROUND
+================================================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-180px;
+left:-180px;
+
+width:500px;
+height:500px;
+
+background:
+linear-gradient(
+    135deg,
+    rgba(255,255,255,.80),
+    rgba(190,210,225,.35),
+    rgba(255,255,255,.10)
+);
+
+filter:blur(50px);
+
+border-radius:50%;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+bottom:-200px;
+right:-150px;
+
+width:500px;
+height:500px;
+
+background:
+linear-gradient(
+    135deg,
+    rgba(200,215,225,.60),
+    rgba(255,255,255,.15)
+);
+
+filter:blur(60px);
+
+border-radius:50%;
+
+z-index:-2;
+
+}
+
+/* =================================================
+HEADER
+================================================= */
+
+.main-header{
+
+position:relative;
+
+margin:18px;
+
+padding:30px 20px;
+
+text-align:center;
+
+color:white;
+
+background:
+linear-gradient(
+    135deg,
+    rgba(20,42,62,.94),
+    rgba(48,78,99,.88)
+);
+
+border:1px solid
+rgba(255,255,255,.25);
+
+border-radius:28px;
+
+box-shadow:
+
+    0 20px 50px
+    rgba(20,35,50,.18),
+
+    inset 0 1px 0
+    rgba(255,255,255,.25);
+
+backdrop-filter:blur(25px);
+
+-webkit-backdrop-filter:blur(25px);
+
+overflow:hidden;
+
+}
+
+.header-glow{
+
+position:absolute;
+
+width:250px;
+height:100px;
+
+top:-60px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:
+rgba(255,255,255,.20);
+
+filter:blur(35px);
+
+pointer-events:none;
+
+}
+
+.main-header img{
+
+width:88px;
+height:88px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:
+3px solid
+rgba(255,255,255,.65);
+
+box-shadow:
+
+    0 8px 25px
+    rgba(0,0,0,.25),
+
+    inset 0 0 10px
+    rgba(255,255,255,.3);
+
+}
+
+.main-header h1{
+
+margin:10px 0 3px;
+
+font-size:
+clamp(22px,4vw,34px);
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+}
+
+.main-header p{
+
+opacity:.85;
+
+font-size:15px;
+
+}
+
+/* =================================================
+ANNOUNCEMENT
+================================================= */
+
+.announcement{
+
+margin:0 18px 18px;
+
+background:#007AFF;
+
+border-radius:15px;
+
+border:
+1px solid
+rgba(255,255,255,.35);
+
+box-shadow:
+
+    0 8px 25px
+    rgba(0,122,255,.20),
+
+    inset 0 1px 0
+    rgba(255,255,255,.25);
+
+overflow:hidden;
+
+}
+
+.announcement marquee{
+
+height:48px;
+
+line-height:48px;
+
+color:white;
+
+font-size:15px;
+
+font-weight:600;
+
+}
+
+.announcement span{
+
+padding:0 25px;
+
+}
+
+/* =================================================
+NAVIGATION
+================================================= */
+
+nav{
+
+position:sticky;
+
+top:10px;
+
+z-index:100;
+
+width:
+calc(100% - 36px);
+
+margin:0 auto 20px;
+
+padding:10px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,.72);
+
+border:
+1px solid
+rgba(255,255,255,.8);
+
+border-radius:20px;
+
+box-shadow:
+
+    0 12px 35px
+    rgba(30,50,70,.12),
+
+    inset 0 1px 0 white;
+
+backdrop-filter:blur(25px);
+
+-webkit-backdrop-filter:blur(25px);
+
+}
+
+nav a{
+
+display:inline-block;
+
+color:#263746;
+
+text-decoration:none;
+
+font-weight:600;
+
+padding:10px 18px;
+
+margin:3px;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+background:
+rgba(255,255,255,.90);
+
+transform:
+translateY(-2px);
+
+box-shadow:
+0 6px 18px
+rgba(30,50,70,.12);
+
+}
+
+/* =================================================
+SECTION
+================================================= */
+
+section{
+
+padding:50px 7%;
+
+max-width:1250px;
+
+margin:auto;
+
+}
+
+.title{
+
+text-align:center;
+
+color:#263b4d;
+
+font-size:
+clamp(25px,4vw,34px);
+
+margin-bottom:30px;
+
+font-weight:700;
+
+}
+
+.title::after{
+
+content:"";
+
+display:block;
+
+width:55px;
+
+height:3px;
+
+background:#607d8b;
+
+margin:10px auto;
+
+border-radius:10px;
+
+}
+
+.section-intro{
+
+text-align:center;
+
+max-width:800px;
+
+margin:
+-10px auto 30px;
+
+color:#52616d;
+
+}
+
+/* =================================================
+COMMON FROSTED GLASS
+================================================= */
+
+.glass-card{
+
+background:
+rgba(255,255,255,.62);
+
+border:
+1px solid
+rgba(255,255,255,.85);
+
+box-shadow:
+
+    0 15px 40px
+    rgba(30,50,70,.10),
+
+    inset 0 1px 0
+    rgba(255,255,255,.85);
+
+backdrop-filter:blur(25px);
+
+-webkit-backdrop-filter:blur(25px);
+
+}
+
+/* =================================================
+HOME / ABOUT
+================================================= */
+
+.about{
+
+padding:30px;
+
+border-radius:24px;
+
+text-align:center;
+
+}
+
+.about img{
+
+width:min(100%,700px);
+
+height:300px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:
+1px solid
+rgba(255,255,255,.9);
+
+box-shadow:
+
+    0 12px 30px
+    rgba(30,50,70,.16);
+
+}
+
+.about h2{
+
+color:#334e60;
+
+margin:20px 0 10px;
+
+}
+
+.about p{
+
+max-width:800px;
+
+margin:auto;
+
+color:#52616d;
+
+}
+
+/* =================================================
+COURSE CARDS
+================================================= */
+
+.course{
+
+margin:20px auto;
+
+padding:25px;
+
+max-width:950px;
+
+border-radius:20px;
+
+transition:.35s;
+
+}
+
+.course:hover{
+
+transform:
+translateY(-6px)
+scale(1.01);
+
+box-shadow:
+
+    0 25px 50px
+    rgba(30,50,70,.16),
+
+    inset 0 1px 0
+    rgba(255,255,255,.9);
+
+}
+
+.course h2{
+
+color:#334e60;
+
+margin-bottom:5px;
+
+font-size:24px;
+
+}
+
+.course p{
+
+color:#52616d;
+
+margin:6px 0;
+
+}
+
+.course b{
+
+color:#344b5b;
+
+}
+
+.course a{
+
+display:inline-block;
+
+margin-top:12px;
+
+padding:9px 15px;
+
+color:#344b5b;
+
+background:
+rgba(255,255,255,.65);
+
+border:
+1px solid
+rgba(255,255,255,.9);
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.course a:hover{
+
+background:#344b5b;
+
+color:white;
+
+transform:
+translateY(-2px);
+
+}
+
+/* =================================================
+SPORTS CARDS
+================================================= */
+
+.sport{
+
+margin:22px auto;
+
+padding:25px;
+
+max-width:950px;
+
+border-radius:22px;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.sport:hover{
+
+transform:
+translateY(-7px)
+scale(1.01);
+
+box-shadow:
+
+    0 25px 55px
+    rgba(30,50,70,.18),
+
+    inset 0 1px 0
+    rgba(255,255,255,.9);
+
+}
+
+.sport img{
+
+display:block;
+
+width:min(100%,250px);
+
+height:160px;
+
+object-fit:cover;
+
+margin:
+0 auto 18px;
+
+border-radius:18px;
+
+border:
+1px solid
+rgba(255,255,255,.9);
+
+box-shadow:
+
+    0 10px 25px
+    rgba(30,50,70,.15);
+
+}
+
+.sport h2{
+
+color:#334e60;
+
+margin-bottom:10px;
+
+}
+
+.sport p{
+
+color:#52616d;
+
+}
+
+/* =================================================
+SPORTS BUTTON
+================================================= */
+
+.sports-btn{
+
+margin-top:15px;
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:12px;
+
+background:
+rgba(255,255,255,.75);
+
+color:#344b5b;
+
+border:
+1px solid
+rgba(255,255,255,.9);
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 5px 15px
+rgba(30,50,70,.08);
+
+}
+
+.sports-btn:hover{
+
+background:#344b5b;
+
+color:white;
+
+transform:
+translateY(-2px);
+
+}
+
+/* =================================================
+RACE SECTION
+================================================= */
+
+.race-container{
+
+max-width:950px;
+
+margin:25px auto;
+
+padding:28px;
+
+border-radius:22px;
+
+text-align:center;
+
+}
+
+.race-container > h2{
+
+color:#334e60;
+
+margin-bottom:22px;
+
+}
+
+.race-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:18px;
+
+}
+
+.race-card{
+
+padding:22px;
+
+border-radius:18px;
+
+background:
+rgba(255,255,255,.50);
+
+border:
+1px solid
+rgba(255,255,255,.75);
+
+transition:.3s;
+
+}
+
+.race-card:hover{
+
+transform:
+translateY(-5px);
+
+background:
+rgba(255,255,255,.75);
+
+box-shadow:
+0 15px 30px
+rgba(30,50,70,.12);
+
+}
+
+.race-card span{
+
+font-size:32px;
+
+}
+
+.race-card h3{
+
+color:#344b5b;
+
+margin:8px 0;
+
+}
+
+.race-card p{
+
+color:#52616d;
+
+font-size:14px;
+
+}
+
+/* =================================================
+FOOTER
+================================================= */
+
+footer{
+
+margin-top:30px;
+
+padding:25px;
+
+text-align:center;
+
+color:white;
+
+background:
+rgba(30,48,62,.95);
+
+border-top:
+1px solid
+rgba(255,255,255,.2);
+
+}
+
+footer p{
+
+margin:4px;
+
+opacity:.85;
+
+}
+
+/* =================================================
+MOBILE
+================================================= */
+
+@media(max-width:700px){
+
+.main-header{
+
+    margin:10px;
+
+    padding:22px 15px;
+
+    border-radius:22px;
+}
+
+.main-header img{
+
+    width:72px;
+
+    height:72px;
+}
+
+.announcement{
+
+    margin:
+    0 10px 12px;
+
+    border-radius:14px;
+}
+
+.announcement marquee{
+
+    height:44px;
+
+    line-height:44px;
+
+    font-size:13px;
+}
+
+nav{
+
+    width:
+    calc(100% - 20px);
+
+    top:5px;
+
+    border-radius:16px;
+
+    padding:7px;
+}
+
+nav a{
+
+    padding:8px 10px;
+
+    margin:2px;
+
+    font-size:14px;
+}
+
+section{
+
+    padding:35px 5%;
+}
+
+.about{
+
+    padding:18px;
+
+    border-radius:20px;
+}
+
+.about img{
+
+    height:210px;
+}
+
+.course,
+.sport{
+
+    padding:20px;
+
+    border-radius:18px;
+}
+
+.sport img{
+
+    width:100%;
+
+    height:190px;
+}
+
+.race-grid{
+
+    grid-template-columns:1fr;
+}
+
+}
+
+/* =================================================
+SMALL PHONES
+================================================= */
+
+@media(max-width:420px){
+
+.main-header h1{
+
+    font-size:21px;
+}
+
+.main-header p{
+
+    font-size:13px;
+}
+
+nav a{
+
+    font-size:13px;
+
+    padding:7px 8px;
+}
+
+.title{
+
+    font-size:24px;
+}
+
+.course h2,
+.sport h2{
+
+    font-size:21px;
+}
+
+.course p,
+.sport p,
+.about p{
+
+    font-size:14px;
+}
+
+}
+
+/* =================================================
+REDUCE MOTION
+================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+    scroll-behavior:auto;
+
+    transition:none !important;
+}
+
+}
